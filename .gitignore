@@ -43,6 +43,7 @@ server_report_split_*/
 docs/_*/
 docs/report/_framework_work/
 docs/*.md
+!docs/团队下载与环境准备指南.md
 
 # Raw and generated datasets are distributed separately.
 data/
