@@ -28,6 +28,8 @@ RS-TailCalDet 用于舰船、飞机和车辆目标检测：
 | `val_mixed_stress` | 10 | 95.19% | 13.77% | 93.38% | 15.40% | 7.47 s | 8.04 s |
 | `val_sparse` | 3 | 99.33% | 16.76% | 98.67% | 17.32% | 7.53 s | 7.98 s |
 
+报告用性能图、精确汇总数据及证据来源见 [docs/results/README.md](docs/results/README.md)。
+
 三种布局均满足当前评分协议的硬性要求：
 
 - 综合 Recall ≥ 85%。
