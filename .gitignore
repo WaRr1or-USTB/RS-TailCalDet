@@ -38,6 +38,7 @@ report_release_sync_*/
 server_phase_*/
 server_platform_delta_*/
 server_report_split_*/
+release_assets/
 
 # Document rendering and review caches
 docs/_*/
