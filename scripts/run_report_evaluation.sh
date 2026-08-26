@@ -10,6 +10,7 @@ CAL_BIG="${CAL_BIG:-$ROOT/data_big_report_calibration_s2026}"
 VAL_BIG="${VAL_BIG:-$ROOT/data_big_report_validation_s2026}"
 THRESH_DIR="${THRESH_DIR:-$ROOT/runs/detect/report_phase1_thresholds_r925_repro_s2026}"
 THRESHOLDS="$THRESH_DIR/class_thresholds.json"
+OUTPUT_PREFIX="${OUTPUT_PREFIX:-report_v16_repro_r925}"
 DEVICE="${DEVICE:-0}"
 
 export PYTHONPATH="$ROOT/ultralytics-main"
@@ -75,7 +76,7 @@ python scripts/optimize_class_thresholds.py \
 require_file "$THRESHOLDS"
 
 for split in val_scene_grouped val_mixed_stress val_sparse; do
-  output="$ROOT/runs/detect/report_v16_repro_r925_${split}_s2026"
+  output="$ROOT/runs/detect/${OUTPUT_PREFIX}_${split}_s2026"
   require_new_dir "$output"
   python scripts/evaluate_big_images_sliding.py \
     --model "$MODEL" \

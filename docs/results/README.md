@@ -24,6 +24,18 @@
 | `inference_timing.png` | RTX 3090 上 10000×10000 图像的平均、最大推理时间 | 工程效率分析 |
 | `performance_summary.csv` | 所有绘图数据的精确数值 | 制表、复核和二次绘图 |
 
+## 数据集图表
+
+| 文件 | 内容 | 建议用途 |
+|---|---|---|
+| `dataset_split.png` | 60%训练、10%校准、30%锁定验证的场景级互斥划分 | 数据集划分说明 |
+| `class_distribution.png` | 60%官方训练子集的25类长尾分布 | 类别不均衡分析 |
+| `broad_category_distribution.png` | 三个数据子集中的舰船、飞机、车辆标注数量 | 三大类分布分析 |
+| `object_scale_distribution.png` | 按COCO面积阈值统计的小、中、大目标占比 | 小目标与尺度分析 |
+| `dataset_statistics_overview.png` | 类别共现、25类长尾和相对目标尺度三联图 | 数据集统计主图 |
+| `representative_training_samples.png` | 舰船、飞机、FSC及复杂背景真实训练样本 | 数据样例与标注展示 |
+| `dataset_statistics.csv` | 数据划分、大类数量和目标尺度的精确统计 | 数据表与复核 |
+
 ## 30% 锁定验证结果
 
 | 验证构造 | 总体 Recall | 总体 FDR | 严格 25 类 Recall | 严格 25 类 FDR | 平均时间 | 最大时间 |
@@ -59,6 +71,7 @@
 
 ```bash
 python scripts/generate_report_results.py
+python scripts/generate_dataset_report_figures.py
 ```
 
 脚本仅读取已冻结的结果文件，并覆盖本目录内的图表与 `performance_summary.csv`。

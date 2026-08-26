@@ -1,0 +1,4 @@
+﻿split,images,objects,ship_objects,aircraft_objects,vehicle_objects,small,medium,large
+train,2688,12456,1370,10862,224,50,5866,6540
+calibration,448,2163,379,1739,45,18,1355,790
+validation,1345,6317,933,5248,136,25,3059,3233
