@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.1.0",
+  "method": {
+    "id": "rs-tailcaldet-v1",
+    "display_name": "RS-TailCalDet",
+    "version": "1.1.0",
+    "description": "YOLO26x detector with large-image sliding inference and calibrated class thresholds"
+  },
+  "base_detector": {
+    "family": "YOLO26x",
+    "checkpoint_path": "runs/detect/yolo26x_report60_cal10_e120_s2026_b6/weights/best.pt",
+    "checkpoint_hash": "72F7FBE5D531FAA9A0A6E21B869B2C54A4D0DE512B347B0E8259CA13E4E2DDD8",
+    "trusted": true,
+    "nc": 25,
+    "end2end": true,
+    "inference_branch": "one_to_one",
+    "detection_scales": ["P3/8", "P4/16", "P5/32"]
+  },
+  "inference": {
+    "input_size": 1024,
+    "tile_size": 800,
+    "stride": 800,
+    "pred_conf": 0.001,
+    "pred_iou": 0.7,
+    "max_det": 300,
+    "global_nms_iou": 0.7,
+    "batch": 1,
+    "precision": "fp32",
+    "device": "0",
+    "tile_iou_nms_active": false,
+    "tile_transform": "square_resize_no_padding",
+    "coordinate_mapping": "ultralytics_to_tile_then_add_offset"
+  },
+  "threshold": {
+    "file": "runs/detect/report_phase1_thresholds_r925_s2026/class_thresholds.json",
+    "hash": "B9122B09266B0F5D9C88C9866670E76CD28949F978BDFF5F21B28F3202C55D49",
+    "calibration_min_recall": 0.925,
+    "description": "Frozen vector of 25 independently calibrated class thresholds",
+    "per_class_values": {
+      "0": 0.002,
+      "1": 0.145,
+      "2": 0.464,
+      "3": 0.17,
+      "4": 0.005,
+      "5": 0.384,
+      "6": 0.392,
+      "7": 0.014,
+      "8": 0.013,
+      "9": 0.887,
+      "10": 0.011,
+      "11": 0.62,
+      "12": 0.019,
+      "13": 0.011,
+      "14": 0.001,
+      "15": 0.149,
+      "16": 0.332,
+      "17": 0.702,
+      "18": 0.479,
+      "19": 0.234,
+      "20": 0.906,
+      "21": 0.073,
+      "22": 0.84,
+      "23": 0.001,
+      "24": 0.004
+    }
+  },
+  "evaluation": {
+    "dataset_protocol": "data_v2/report_split_v16/dataset_report.yaml",
+    "locked_validation_ratio": 0.30015621513055124,
+    "supported_protocols": [
+      "strict_25",
+      "official_overall",
+      "official_by_category",
+      "group_macro",
+      "ultralytics_val"
+    ],
+    "iou_rules": {
+      "source": "project_v16_scoring_implementation",
+      "authority_verified": false,
+      "class_24_FSC": 0.35,
+      "other_classes": 0.5
+    },
+    "requirements": {
+      "target_recall": 0.85,
+      "max_fdr": 0.2,
+      "max_seconds_per_10000_image": 20.0
+    }
+  },
+  "classes": {
+    "fine_classes": [
+      {"id": 0, "name": "HM"},
+      {"id": 1, "name": "LQS"},
+      {"id": 2, "name": "QHS"},
+      {"id": 3, "name": "MS"},
+      {"id": 4, "name": "A1_SU-35"},
+      {"id": 5, "name": "A2_C-130"},
+      {"id": 6, "name": "A3_C-17"},
+      {"id": 7, "name": "A4_C-5"},
+      {"id": 8, "name": "A5_F-16"},
+      {"id": 9, "name": "A6_TU-160"},
+      {"id": 10, "name": "A7_E-3"},
+      {"id": 11, "name": "A8_B-52"},
+      {"id": 12, "name": "A9_P-3C"},
+      {"id": 13, "name": "A10_B-1B"},
+      {"id": 14, "name": "A11_E-8"},
+      {"id": 15, "name": "A12_TU-22"},
+      {"id": 16, "name": "A13_F-15"},
+      {"id": 17, "name": "A14_KC-135"},
+      {"id": 18, "name": "A15_F-22"},
+      {"id": 19, "name": "A16_FA-18"},
+      {"id": 20, "name": "A17_TU-95"},
+      {"id": 21, "name": "A18_KC-10"},
+      {"id": 22, "name": "A19_SU-34"},
+      {"id": 23, "name": "A20_SU-24"},
+      {"id": 24, "name": "FSC"}
+    ],
+    "fine_names": [
+      "HM", "LQS", "QHS", "MS", "A1_SU-35", "A2_C-130", "A3_C-17",
+      "A4_C-5", "A5_F-16", "A6_TU-160", "A7_E-3", "A8_B-52", "A9_P-3C",
+      "A10_B-1B", "A11_E-8", "A12_TU-22", "A13_F-15", "A14_KC-135",
+      "A15_F-22", "A16_FA-18", "A17_TU-95", "A18_KC-10", "A19_SU-34",
+      "A20_SU-24", "FSC"
+    ],
+    "broad_classes": {
+      "ship": [0, 1, 2, 3],
+      "aircraft": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+      "vehicle": [24]
+    },
+    "mappings": {
+      "fine_to_broad": {
+        "0": "ship",
+        "1": "ship",
+        "2": "ship",
+        "3": "ship",
+        "4": "aircraft",
+        "5": "aircraft",
+        "6": "aircraft",
+        "7": "aircraft",
+        "8": "aircraft",
+        "9": "aircraft",
+        "10": "aircraft",
+        "11": "aircraft",
+        "12": "aircraft",
+        "13": "aircraft",
+        "14": "aircraft",
+        "15": "aircraft",
+        "16": "aircraft",
+        "17": "aircraft",
+        "18": "aircraft",
+        "19": "aircraft",
+        "20": "aircraft",
+        "21": "aircraft",
+        "22": "aircraft",
+        "23": "aircraft",
+        "24": "vehicle"
+      }
+    }
+  },
+  "availability": {
+    "training_manifest": "data_v2/report_split_v16/assignments.csv",
+    "training_results": "runs/detect/yolo26x_report60_cal10_e120_s2026_b6/results.csv",
+    "calibration_summary": "runs/detect/report_phase1_thresholds_r925_s2026/summary.json",
+    "locked_evaluation_artifacts": true,
+    "official_hidden_test_results": false
+  }
+}

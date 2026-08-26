@@ -1,0 +1,154 @@
+{
+  "reviewer": "GPT",
+  "date": "2026-08-06",
+  "ship_candidates": [
+    {
+      "case_id": "SHIP-01",
+      "verdict": "uncertain",
+      "evidence": "目标被裁剪且紧贴码头，无法可靠辨认飞行甲板、舰岛或武器等关键舰种特征。"
+    },
+    {
+      "case_id": "SHIP-02",
+      "verdict": "uncertain",
+      "evidence": "港区遮挡和低对比度较强，无法据此确认其是否为航母或民船。"
+    },
+    {
+      "case_id": "SHIP-03",
+      "verdict": "uncertain",
+      "evidence": "可见大型靠泊目标，但细节受港区建筑遮挡，不能安全确定为民船。"
+    },
+    {
+      "case_id": "SHIP-04",
+      "verdict": "confirmed_correct",
+      "evidence": "可见连续甲板及多个规则直升机着舰标志，符合两栖登陆舰的甲板布局。"
+    },
+    {
+      "case_id": "SHIP-05",
+      "verdict": "uncertain",
+      "evidence": "虽有甲板和圆形标志，但目标分辨率不足，无法排除其他大型舰船。"
+    },
+    {
+      "case_id": "SHIP-06",
+      "verdict": "uncertain",
+      "evidence": "同源图像中的目标过小且局部过曝，无法依据舰岛和甲板结构稳定分类。"
+    },
+    {
+      "case_id": "SHIP-07",
+      "verdict": "confirmed_mislabel",
+      "suggested_class": 0,
+      "evidence": "可见尺度明显更大的全通飞行甲板和复杂舰岛/跑道式标线，更符合 HM 航母。"
+    },
+    {
+      "case_id": "SHIP-08",
+      "verdict": "confirmed_correct",
+      "evidence": "大型舰体具有连续飞行甲板和直升机着舰标线，未见明确固定翼航母跑道特征，符合 LQS。"
+    },
+    {
+      "case_id": "SHIP-09",
+      "verdict": "confirmed_mislabel",
+      "suggested_class": 3,
+      "evidence": "可见货运甲板/装卸结构和集中上层建筑，未见全通甲板或军舰装备，符合 MS 民船。"
+    },
+    {
+      "case_id": "SHIP-10",
+      "verdict": "confirmed_mislabel",
+      "suggested_class": 3,
+      "evidence": "与 SHIP-09 同源同目标，甲板呈货运布局而非两栖舰连续飞行甲板，符合 MS 民船。"
+    },
+    {
+      "case_id": "SHIP-11",
+      "verdict": "confirmed_mislabel",
+      "suggested_class": 3,
+      "evidence": "同源目标具有货舱/装卸结构，无直升机甲板或军舰武器特征，符合 MS 民船。"
+    },
+    {
+      "case_id": "SHIP-12",
+      "verdict": "confirmed_correct",
+      "evidence": "舰体尺度大，具有连续飞行甲板和多处直升机起降区域，符合 LQS 两栖登陆舰。"
+    },
+    {
+      "case_id": "SHIP-13",
+      "verdict": "confirmed_correct",
+      "evidence": "小型狭长军舰轮廓清楚，可见上层装备/舰岛，不具备民船货运甲板特征，符合 QHS。"
+    },
+    {
+      "case_id": "SHIP-14",
+      "verdict": "uncertain",
+      "evidence": "目标模糊且阴影较重，无法确认武器、雷达或民船货运结构。"
+    },
+    {
+      "case_id": "SHIP-15",
+      "verdict": "confirmed_mislabel",
+      "suggested_class": 3,
+      "evidence": "可见民用作业/货运船式甲板和上层结构，未见军舰装备，符合 MS 民船。"
+    },
+    {
+      "case_id": "SHIP-16",
+      "verdict": "uncertain",
+      "evidence": "船体较小且靠泊遮挡明显，无法可靠区分巡逻舰与民用工作船。"
+    },
+    {
+      "case_id": "SHIP-17",
+      "verdict": "confirmed_mislabel",
+      "suggested_class": 3,
+      "evidence": "可见民用工程/作业船式甲板布局，无明确雷达或武器特征，符合 MS 民船。"
+    }
+  ],
+  "fsc_candidates": [
+    {
+      "case_id": "FSC-01",
+      "verdict": "uncertain",
+      "evidence": "候选位于设施/停车区域，虽呈车辆轮廓，但未能分辨发射装置或特种底盘。"
+    },
+    {
+      "case_id": "FSC-02",
+      "verdict": "uncertain",
+      "evidence": "目标很小且与周边普通车辆相似，缺少可确认的发射车特征。"
+    },
+    {
+      "case_id": "FSC-03",
+      "verdict": "confirmed_miss",
+      "evidence": "原图为成组部署的军用车辆场地，候选为独立的长车体且与现有框不重叠，符合未标注发射车。"
+    },
+    {
+      "case_id": "FSC-04",
+      "verdict": "uncertain",
+      "evidence": "仅见低分辨率矩形目标，无法排除建筑附属物或普通车辆。"
+    },
+    {
+      "case_id": "FSC-05",
+      "verdict": "uncertain",
+      "evidence": "候选目标过小，无法从外形确认军用发射车辆。"
+    },
+    {
+      "case_id": "FSC-06",
+      "verdict": "uncertain",
+      "evidence": "图像细节不足，不能把模型响应作为漏标证据。"
+    },
+    {
+      "case_id": "FSC-07",
+      "verdict": "uncertain",
+      "evidence": "候选靠近设施边缘，轮廓模糊，缺少可辨识的发射装置。"
+    },
+    {
+      "case_id": "FSC-08",
+      "verdict": "false_positive",
+      "evidence": "原图为机场停机坪场景，候选对应航空器/其阴影而非地面发射车辆。"
+    },
+    {
+      "case_id": "FSC-09",
+      "verdict": "confirmed_miss",
+      "evidence": "原图林地道路中存在与周边独立部署车辆一致的长车体，符合未标注的军用发射车辆。"
+    },
+    {
+      "case_id": "FSC-10",
+      "verdict": "confirmed_miss",
+      "evidence": "与 FSC-03 同源军用车辆部署区，候选为另一独立车体且不与既有标注重叠。"
+    },
+    {
+      "case_id": "FSC-11",
+      "verdict": "false_positive",
+      "evidence": "原图为机场区域，候选外形和上下文均更符合航空器/阴影，不是发射车辆。"
+    }
+  ]
+}

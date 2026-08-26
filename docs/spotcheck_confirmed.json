@@ -1,0 +1,27 @@
+[
+  {
+    "image_stem": "MAR20_3662",
+    "split": "val",
+    "problem_type": "miss",
+    "suggested_class": "KC-135",
+    "box": "[173.6, 160.3, 295.4, 278.4]",
+    "evidence": "大型四发喷气式飞机，外形与KC-135加油机高度吻合（翼下吊舱、T型尾翼、机身细长），模型置信度0.94，无对应标注"
+  },
+  {
+    "image_stem": "E103.9_N1.2_20200419_L1A0004749016-PAN26_crop6",
+    "split": "val",
+    "problem_type": "miss",
+    "suggested_class": "MS",
+    "box": "[440.0, 577.3, 553.4, 636.2]",
+    "evidence": "民用船舶（上层建筑集中尾部、无武装），模型置信度0.90，无对应标注"
+  },
+  {
+    "image_stem": "W76.3_N37.0_20150318_L1A0000704021-PAN20_crop1",
+    "split": "val",
+    "problem_type": "mislabel",
+    "annotated_class": "QHS",
+    "suggested_class": "MS",
+    "box": "[133.2, 475.8, 287.9, 752.5]",
+    "evidence": "标注为驱护舰，实为散货/驳船类民船（矩形舱口网格、无武器、船首钝圆），模型置信度0.95"
+  }
+]

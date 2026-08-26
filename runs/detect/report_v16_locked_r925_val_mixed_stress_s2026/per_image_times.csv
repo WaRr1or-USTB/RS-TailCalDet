@@ -1,0 +1,11 @@
+image,width,height,tiles,ground_truth,raw_candidates,predictions_after_nms,data_read_seconds,seconds,end_to_end_seconds
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000001.jpg,10000,10000,169,1894,4066,3091,0.791491,8.039028,8.830519
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000002.jpg,10000,10000,169,1145,2947,2184,0.807325,7.412035,8.219360
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000003.jpg,10000,10000,169,880,2326,1760,0.811514,7.506543,8.318057
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000004.jpg,10000,10000,169,692,2178,1532,0.839966,7.345987,8.185953
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000005.jpg,10000,10000,169,563,2033,1434,0.819825,7.396560,8.216385
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000006.jpg,10000,10000,169,432,1693,1202,0.848518,7.458533,8.307051
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000007.jpg,10000,10000,169,311,1880,1242,0.820423,7.389194,8.209616
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000008.jpg,10000,10000,169,207,1372,924,0.794985,7.469005,8.263990
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000009.jpg,10000,10000,169,144,1424,889,0.795646,7.354796,8.150442
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_mixed_stress/big_val_mixed_stress_000010.jpg,10000,10000,169,49,1064,534,0.624778,7.369468,7.994246

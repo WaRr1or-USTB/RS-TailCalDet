@@ -1,0 +1,93 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments and editor state
+.venv/
+venv/
+env/
+.vscode/
+.idea/
+.agents/
+.impeccable/
+.ultralytics_config/
+AGENTS.md
+
+# Frontend dependencies and build outputs
+.pnpm-store/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+*.tsbuildinfo
+
+# Logs, caches and archives
+*.log
+*.cache
+*.tmp
+*.bak
+*.zip
+*.rar
+*.7z
+
+# Local synchronization and staging directories
+report_release_sync_*/
+server_phase_*/
+server_platform_delta_*/
+server_report_split_*/
+
+# Document rendering and review caches
+docs/_*/
+docs/report/_framework_work/
+docs/*.md
+
+# Raw and generated datasets are distributed separately.
+data/
+data_big_v1/
+data_big_report_*/
+data_hardneg*/
+data_hierarchical/
+data_v2/*
+
+# Keep only the reproducible report split protocol in Git.
+!data_v2/report_split_v16/
+data_v2/report_split_v16/*
+!data_v2/report_split_v16/dataset_report.yaml
+!data_v2/report_split_v16/split_summary.json
+!data_v2/report_split_v16/assignments.csv
+
+# Ignore experiment outputs by default.
+runs/*
+!runs/detect/
+runs/detect/*
+
+# Final report model. The .pt file is stored with Git LFS.
+!runs/detect/yolo26x_report60_cal10_e120_s2026_b6/
+runs/detect/yolo26x_report60_cal10_e120_s2026_b6/*
+!runs/detect/yolo26x_report60_cal10_e120_s2026_b6/args.yaml
+!runs/detect/yolo26x_report60_cal10_e120_s2026_b6/results.csv
+!runs/detect/yolo26x_report60_cal10_e120_s2026_b6/weights/
+runs/detect/yolo26x_report60_cal10_e120_s2026_b6/weights/*
+!runs/detect/yolo26x_report60_cal10_e120_s2026_b6/weights/best.pt
+
+# Frozen class calibration.
+!runs/detect/report_phase1_thresholds_r925_s2026/
+runs/detect/report_phase1_thresholds_r925_s2026/*
+!runs/detect/report_phase1_thresholds_r925_s2026/class_thresholds.json
+!runs/detect/report_phase1_thresholds_r925_s2026/class_metrics.csv
+!runs/detect/report_phase1_thresholds_r925_s2026/optimization_trace.csv
+!runs/detect/report_phase1_thresholds_r925_s2026/summary.json
+
+# Locked validation evidence.
+!runs/detect/report_v16_locked_r925_val_scene_grouped_s2026/
+!runs/detect/report_v16_locked_r925_val_scene_grouped_s2026/**
+!runs/detect/report_v16_locked_r925_val_mixed_stress_s2026/
+!runs/detect/report_v16_locked_r925_val_mixed_stress_s2026/**
+!runs/detect/report_v16_locked_r925_val_sparse_s2026/
+!runs/detect/report_v16_locked_r925_val_sparse_s2026/**
+
+# Optional pretrained initializer; download or distribute separately.
+yolo26x.pt

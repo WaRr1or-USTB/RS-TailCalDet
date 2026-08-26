@@ -1,0 +1,11 @@
+image,width,height,tiles,ground_truth,raw_candidates,predictions_after_nms,data_read_seconds,seconds,end_to_end_seconds
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000001.jpg,10000,10000,169,301,2263,1341,0.826793,8.318097,9.144890
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000002.jpg,10000,10000,169,329,2499,1517,0.800939,7.431240,8.232179
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000003.jpg,10000,10000,169,342,2012,1320,0.780405,7.361275,8.141680
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000004.jpg,10000,10000,169,762,2215,1660,0.795906,7.362977,8.158883
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000005.jpg,10000,10000,169,837,2200,1616,0.812247,7.291873,8.104121
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000006.jpg,10000,10000,169,818,2160,1587,0.793251,7.354419,8.147671
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000007.jpg,10000,10000,169,786,1988,1497,0.805375,7.480515,8.285890
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000008.jpg,10000,10000,169,954,2406,1882,0.823928,7.479740,8.303669
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000009.jpg,10000,10000,169,917,2613,1915,0.817737,7.438002,8.255739
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_scene_grouped/big_val_scene_grouped_000010.jpg,10000,10000,169,271,1265,736,0.625988,7.358918,7.984906

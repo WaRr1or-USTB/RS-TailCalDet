@@ -1,0 +1,18 @@
+* text=auto
+
+# Keep scripts and source files portable across Windows and Linux.
+*.sh text eol=lf
+*.py text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+
+# Store model weights with Git LFS.
+*.pt filter=lfs diff=lfs merge=lfs -text

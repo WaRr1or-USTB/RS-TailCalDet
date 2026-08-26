@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rs-calvision.local/schemas/prediction-1.0.0.json",
+  "title": "RS-CalVision Prediction Artifact",
+  "type": "object",
+  "required": [
+    "schema_version", "run", "image", "model", "threshold", "tile_plan",
+    "tiles", "raw_detections", "mapped_detections", "after_global_nms",
+    "final_detections", "stage_counts", "timing"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "run": {
+      "type": "object",
+      "required": ["run_id", "created_at", "method_id", "method_version"],
+      "properties": {
+        "run_id": {"type": "string"},
+        "created_at": {"type": "string"},
+        "method_id": {"type": "string"},
+        "method_version": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "image": {"$ref": "#/$defs/image"},
+    "model": {"type": "object"},
+    "threshold": {"type": "object"},
+    "tile_plan": {
+      "type": "object",
+      "required": ["tile_size", "stride", "network_input_size", "tile_count", "tile_transform", "padding"],
+      "properties": {
+        "tile_size": {"type": "integer", "minimum": 1},
+        "stride": {"type": "integer", "minimum": 1},
+        "network_input_size": {"type": "integer", "minimum": 1},
+        "tile_count": {"type": "integer", "minimum": 0},
+        "tile_transform": {"type": "string"},
+        "padding": {"type": "boolean"}
+      }
+    },
+    "tiles": {"type": "array", "items": {"$ref": "#/$defs/tile"}},
+    "raw_detections": {"type": "array", "items": {"$ref": "#/$defs/rawDetection"}},
+    "mapped_detections": {"type": "array", "items": {"$ref": "#/$defs/mappedDetection"}},
+    "after_global_nms": {"type": "array", "items": {"$ref": "#/$defs/finalDetection"}},
+    "final_detections": {"type": "array", "items": {"$ref": "#/$defs/finalDetection"}},
+    "stage_counts": {
+      "type": "object",
+      "required": ["raw", "mapped", "after_global_nms", "final"],
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "timing": {"$ref": "#/$defs/timing"}
+  },
+  "$defs": {
+    "bbox": {
+      "type": "object",
+      "required": ["x1", "y1", "x2", "y2", "width", "height"],
+      "properties": {
+        "x1": {"type": "number"}, "y1": {"type": "number"},
+        "x2": {"type": "number"}, "y2": {"type": "number"},
+        "width": {"type": "number", "minimum": 0},
+        "height": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "image": {
+      "type": "object",
+      "required": ["image_id", "filename", "width", "height", "channels", "file_size", "proxy_big_image"],
+      "properties": {
+        "image_id": {"type": "string"}, "path": {"type": ["string", "null"]},
+        "source": {"type": ["string", "null"]}, "filename": {"type": "string"},
+        "width": {"type": "integer"}, "height": {"type": "integer"},
+        "channels": {"type": "integer"}, "file_size": {"type": "integer"},
+        "sha256": {"type": ["string", "null"]}, "dataset": {"type": ["string", "null"]},
+        "split": {"type": ["string", "null"]}, "proxy_big_image": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "tile": {
+      "type": "object",
+      "required": [
+        "tile_id", "index", "offset_x", "offset_y", "tile_width", "tile_height",
+        "network_input_width", "network_input_height", "scale_x", "scale_y",
+        "is_boundary_tile", "padding"
+      ],
+      "properties": {
+        "tile_id": {"type": "string"}, "index": {"type": "integer"},
+        "offset_x": {"type": "integer"}, "offset_y": {"type": "integer"},
+        "tile_width": {"type": "integer"}, "tile_height": {"type": "integer"},
+        "network_input_width": {"type": "integer"}, "network_input_height": {"type": "integer"},
+        "scale_x": {"type": "number"}, "scale_y": {"type": "number"},
+        "is_boundary_tile": {"type": "boolean"}, "padding": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "rawDetection": {
+      "type": "object",
+      "required": ["id", "image_id", "tile_id", "class_id", "class_name", "confidence", "bbox_tile", "stage"],
+      "properties": {
+        "id": {"type": "string"}, "image_id": {"type": "string"}, "tile_id": {"type": "string"},
+        "class_id": {"type": "integer"}, "class_name": {"type": "string"},
+        "confidence": {"type": "number"}, "bbox_tile": {"$ref": "#/$defs/bbox"},
+        "stage": {"const": "raw"}
+      },
+      "additionalProperties": false
+    },
+    "mappedDetection": {
+      "type": "object",
+      "required": ["id", "image_id", "tile_id", "class_id", "class_name", "confidence", "bbox_tile", "bbox_global", "stage"],
+      "properties": {
+        "id": {"type": "string"}, "image_id": {"type": "string"}, "tile_id": {"type": "string"},
+        "class_id": {"type": "integer"}, "class_name": {"type": "string"},
+        "confidence": {"type": "number"}, "bbox_tile": {"$ref": "#/$defs/bbox"},
+        "bbox_global": {"$ref": "#/$defs/bbox"}, "stage": {"const": "mapped"}
+      },
+      "additionalProperties": false
+    },
+    "finalDetection": {
+      "type": "object",
+      "required": [
+        "id", "image_id", "class_id", "class_name", "broad_class", "confidence",
+        "x1", "y1", "x2", "y2", "width", "height", "bbox_global",
+        "source_tile_ids", "source_detection_ids", "stage",
+        "kept_by_global_nms", "kept_by_class_threshold"
+      ],
+      "properties": {
+        "id": {"type": "string"}, "image_id": {"type": "string"},
+        "class_id": {"type": "integer"}, "class_name": {"type": "string"},
+        "broad_class": {"enum": ["ship", "aircraft", "vehicle"]},
+        "confidence": {"type": "number"},
+        "x1": {"type": "number"}, "y1": {"type": "number"},
+        "x2": {"type": "number"}, "y2": {"type": "number"},
+        "width": {"type": "number", "minimum": 0}, "height": {"type": "number", "minimum": 0},
+        "bbox_global": {"$ref": "#/$defs/bbox"},
+        "source_tile_ids": {"type": "array", "items": {"type": "string"}},
+        "source_detection_ids": {"type": "array", "items": {"type": "string"}},
+        "stage": {"enum": ["after_global_nms", "final"]},
+        "kept_by_global_nms": {"type": "boolean"},
+        "kept_by_class_threshold": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "timing": {
+      "type": "object",
+      "required": [
+        "image_read_seconds", "tiling_preprocess_seconds", "model_inference_seconds",
+        "coordinate_mapping_seconds", "global_nms_seconds", "threshold_filter_seconds",
+        "serialization_seconds", "evaluation_seconds", "algorithm_pipeline_seconds",
+        "strict_e2e_seconds", "web_task_seconds"
+      ],
+      "additionalProperties": {"type": ["number", "null"], "minimum": 0}
+    }
+  },
+  "additionalProperties": false
+}

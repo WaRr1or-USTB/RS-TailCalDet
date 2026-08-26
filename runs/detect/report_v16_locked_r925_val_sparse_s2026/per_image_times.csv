@@ -1,0 +1,4 @@
+image,width,height,tiles,ground_truth,raw_candidates,predictions_after_nms,data_read_seconds,seconds,end_to_end_seconds
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_sparse/big_val_sparse_000001.jpg,10000,10000,169,54,935,441,0.520319,7.981416,8.501735
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_sparse/big_val_sparse_000002.jpg,10000,10000,169,54,989,473,0.529500,7.257797,7.787296
+/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_big_report_validation_s2026/images/val_sparse/big_val_sparse_000003.jpg,10000,10000,169,42,914,418,0.570732,7.337134,7.907866

@@ -1,0 +1,31 @@
+{
+  "purpose": "RS-CalVision UI and live-detection showcase only",
+  "data_type": "balanced proxy mosaic assembled from data_v2 validation crops",
+  "not_a_continuous_satellite_scene": true,
+  "big_image": "demo_showcase/generated/images/demo_scene_grouped/big_demo_scene_grouped_000001.jpg",
+  "big_label": "demo_showcase/generated/labels/demo_scene_grouped/big_demo_scene_grouped_000001.txt",
+  "preview": "demo_showcase/preview/demo_mosaic_preview.jpg",
+  "size": [
+    10000,
+    10000
+  ],
+  "grid": [
+    12,
+    12
+  ],
+  "cell_size": 800,
+  "source_cells": 144,
+  "source_cells_by_group": {
+    "ship": 60,
+    "aircraft": 60,
+    "vehicle": 24
+  },
+  "labels": 600,
+  "labels_by_group": {
+    "ship": 158,
+    "aircraft": 253,
+    "vehicle": 189
+  },
+  "seed": 2026,
+  "note": "Cells align with the audited 800-pixel inference grid; vehicle crops are deterministically reused because only seven exist in the validation split."
+}

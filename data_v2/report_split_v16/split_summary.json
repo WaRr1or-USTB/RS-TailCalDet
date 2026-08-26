@@ -1,0 +1,170 @@
+{
+  "data_root": "/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_v2",
+  "output_dir": "/root/autodl-tmp/TZB2026_RS-CalYOLO26x/data_v2/report_split_v16",
+  "seed": 2026,
+  "requested_ratios": {
+    "train": 0.6,
+    "calibration": 0.1,
+    "validation": 0.3
+  },
+  "mar20_block_size": 20,
+  "official_images": 4481,
+  "official_split_counts": {
+    "train": 2688,
+    "calibration": 448,
+    "validation": 1345
+  },
+  "official_split_ratios": {
+    "train": 0.5998661013166704,
+    "calibration": 0.0999776835527784,
+    "validation": 0.30015621513055124
+  },
+  "external_train_only_images": 156,
+  "derived_images": 180,
+  "excluded_derived_images": 48,
+  "unresolved_derived_images": [],
+  "scene_groups": 388,
+  "scene_overlap": {
+    "train_calibration": [],
+    "train_validation": [],
+    "calibration_validation": []
+  },
+  "splits": {
+    "train": {
+      "images": 2976,
+      "objects": 13269,
+      "class_counts": [
+        141,
+        63,
+        322,
+        1027,
+        813,
+        824,
+        544,
+        294,
+        652,
+        212,
+        315,
+        391,
+        593,
+        429,
+        279,
+        371,
+        745,
+        900,
+        283,
+        1377,
+        648,
+        103,
+        607,
+        482,
+        854
+      ],
+      "sample_kinds": {
+        "derived": 132,
+        "external_train_only": 156,
+        "official": 2688
+      }
+    },
+    "calibration": {
+      "images": 448,
+      "objects": 2163,
+      "class_counts": [
+        2,
+        7,
+        92,
+        278,
+        120,
+        148,
+        101,
+        53,
+        74,
+        38,
+        56,
+        100,
+        74,
+        81,
+        39,
+        33,
+        145,
+        165,
+        51,
+        186,
+        100,
+        54,
+        63,
+        58,
+        45
+      ],
+      "sample_kinds": {
+        "official": 448
+      }
+    },
+    "validation": {
+      "images": 1345,
+      "objects": 6317,
+      "class_counts": [
+        6,
+        8,
+        225,
+        694,
+        384,
+        325,
+        353,
+        153,
+        291,
+        111,
+        176,
+        259,
+        228,
+        252,
+        114,
+        179,
+        375,
+        359,
+        159,
+        584,
+        366,
+        105,
+        263,
+        212,
+        136
+      ],
+      "sample_kinds": {
+        "official": 1345
+      }
+    }
+  },
+  "class_names": {
+    "0": "HM",
+    "1": "LQS",
+    "2": "QHS",
+    "3": "MS",
+    "4": "A1_SU-35",
+    "5": "A2_C-130",
+    "6": "A3_C-17",
+    "7": "A4_C-5",
+    "8": "A5_F-16",
+    "9": "A6_TU-160",
+    "10": "A7_E-3",
+    "11": "A8_B-52",
+    "12": "A9_P-3C",
+    "13": "A10_B-1B",
+    "14": "A11_E-8",
+    "15": "A12_TU-22",
+    "16": "A13_F-15",
+    "17": "A14_KC-135",
+    "18": "A15_F-22",
+    "19": "A16_FA-18",
+    "20": "A17_TU-95",
+    "21": "A18_KC-10",
+    "22": "A19_SU-34",
+    "23": "A20_SU-24",
+    "24": "FSC"
+  },
+  "manifest_sha256": {
+    "train": "f5753970bb48c21eae4fdb19a34ea732292d06c21154ae509a0e8fc8fb40d45b",
+    "calibration": "39dad090991d87c1949deb76d17d350fb697948b7b5f20e41ccd1bfb08dd6ef8",
+    "validation": "284b37fc43e7be5e4c8de3b0393160c2c7c40bdb4f1d0dab0ad4d8031e4ffc53"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "variant": "balanced_showcase",
+  "split": "demo_scene_grouped",
+  "big_image": "D:\\PyCharm_workplace\\TZB2026_RS-CalYOLO26x\\demo_showcase\\generated\\images\\demo_scene_grouped\\big_demo_scene_grouped_000001.jpg",
+  "big_label": "D:\\PyCharm_workplace\\TZB2026_RS-CalYOLO26x\\demo_showcase\\generated\\labels\\demo_scene_grouped\\big_demo_scene_grouped_000001.txt",
+  "big_size": [
+    10000,
+    10000
+  ],
+  "cell_size": 800,
+  "source_images": 144,
+  "source_cells_by_group": {
+    "ship": 60,
+    "aircraft": 60,
+    "vehicle": 24
+  },
+  "targets": 600,
+  "targets_by_group": {
+    "ship": 158,
+    "aircraft": 253,
+    "vehicle": 189
+  },
+  "placements": 144
+}

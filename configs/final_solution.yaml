@@ -1,0 +1,66 @@
+solution_name: RS-TailCalDet
+project_directory: TZB2026_RS-CalYOLO26x
+date: 2026-08-26
+
+model:
+  family: YOLO26x
+  weights: runs/detect/yolo26x_report60_cal10_e120_s2026_b6/weights/best.pt
+  sha256: 72f7fbe5d531faa9a0a6e21b869b2c54a4d0de512b347b0e8259ca13e4e2ddd8
+  training_data: data_v2/report_split_v16/dataset_report.yaml
+  seed: 2026
+  batch: 6
+  max_epochs: 120
+  completed_epochs: 99
+  training_seconds: 20987.3
+
+postprocess:
+  class_thresholds: runs/detect/report_phase1_thresholds_r925_s2026/class_thresholds.json
+  class_thresholds_sha256: b9122b09266b0f5d9c88c9866670e76cd28949f978bdff5f21b28f3202c55d49
+  calibration_min_recall: 0.925
+
+sliding_window:
+  imgsz: 1024
+  tile_size: 800
+  stride: 800
+  pred_conf: 0.001
+  pred_iou: 0.70
+  global_iou: 0.70
+  max_det_per_tile: 300
+  eval_batch: 1
+  precision: fp32
+
+matching:
+  strict_subclass:
+    class_match_required: true
+    iou_thresholds:
+      class_24_FSC: 0.35
+      other_classes: 0.50
+  official_overall:
+    class_match_required: false
+    iou_thresholds:
+      class_24_FSC: 0.35
+      other_classes: 0.50
+
+v16_scoring:
+  category_macro_average: true
+  category_subclasses:
+    ship: [0, 1, 2, 3]
+    aircraft: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+    vehicle: [24]
+  matching: exact_subclass_id
+  missing_ground_truth_policy: report_incomplete_do_not_assign_zero
+
+validation:
+  source_split: data_v2/report_split_v16/dataset_report.yaml
+  official_validation_images: 1345
+  official_validation_ratio: 0.30015621513055124
+  proxy_big_image_dataset: data_big_report_validation_s2026/dataset.yaml
+  frozen_outputs:
+    - runs/detect/report_v16_locked_r925_val_scene_grouped_s2026
+    - runs/detect/report_v16_locked_r925_val_mixed_stress_s2026
+    - runs/detect/report_v16_locked_r925_val_sparse_s2026
+
+requirements:
+  target_recall: 0.85
+  max_fdr: 0.20
+  max_seconds_per_10000_image: 20.0
