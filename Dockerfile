@@ -7,7 +7,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
     PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
     OMP_NUM_THREADS=8 \
-    YOLO_CONFIG_DIR=/tmp/ultralytics_config
+    YOLO_CONFIG_DIR=/tmp/ultralytics_config \
+    PIP_EXTRA_INDEX_URL=https://download.pytorch.org/whl/cu121
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     bash ca-certificates curl bzip2 libgl1 libglib2.0-0 \
