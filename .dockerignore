@@ -1,0 +1,10 @@
+**
+!Dockerfile
+!environment.yml
+!app/
+!app/**
+!models/
+!models/**
+!ultralytics-main/
+!ultralytics-main/ultralytics/
+!ultralytics-main/ultralytics/**

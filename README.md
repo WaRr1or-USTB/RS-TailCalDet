@@ -211,15 +211,17 @@ python -m py_compile \
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
-当前自动化测试共 23 项，覆盖数据划分、评分口径、滑窗规划、全图 NMS、平台清单和结果追溯。
+当前自动化测试共 29 项，覆盖数据划分、评分口径、滑窗规划、全图 NMS、平台清单、结果追溯和 Docker 输出接口。
 
 ## 项目结构
 
 ```text
 configs/              正式方案与平台配置
+app/                  Docker 推理入口与 RS-TailCalDet 推理实现
 data_v2/              本地数据及可提交的数据协议
 docs/report/          研究报告与图表素材
 frontend/             Web 前端
+models/               Docker 构建使用的冻结模型与类别阈值
 rs_calvision/         平台后端与领域逻辑
 runs/detect/          冻结模型、阈值和评测证据
 scripts/              数据构建、训练、推理和评测脚本
@@ -238,7 +240,15 @@ ultralytics-main/     项目使用的 Ultralytics 源码
 
 ## Docker 状态
 
-最终提交将采用 Docker 镜像。官方统一接口尚未发布，当前仓库保留模型、阈值、依赖和推理组件；接口字段、基础镜像、健康检查和镜像仓库流程将在官方规范发布后补充。
+仓库已实现赛事统一 Docker 接口。容器接收 `--input` 和 `--output`，仅扫描输入目录第一层的 JPG、JPEG、PNG、BMP 文件，并将结果写入 `/output/result.json`。推理固定使用冻结的 RS-TailCalDet 权重、25 类阈值、800×800 无重叠滑窗、1024×1024 网络输入和 IoU 0.70 的跨切片逐类 Hard NMS。
+
+在 Linux x86_64 的已验证 Conda 环境中执行以下准备命令：
+
+```bash
+bash scripts/prepare_docker_delivery.sh
+```
+
+该脚本复制冻结权重和阈值到 `models/`，并按赛事要求由当前 Linux 环境导出不含 `prefix` 的 `environment.yml`。随后在项目根目录构建 `linux/amd64` 镜像，并使用 NVIDIA Container Toolkit 挂载 `/input` 与 `/output` 完成 GPU 自测。镜像推送和 tag 以赛事评测管理系统当次生成的地址为准。
 
 ## 许可与数据
 

@@ -10,6 +10,7 @@ __pycache__/
 .venv/
 venv/
 env/
+environment.yml
 .vscode/
 .idea/
 .agents/
@@ -93,3 +94,6 @@ runs/detect/report_phase1_thresholds_r925_s2026/*
 
 # Optional pretrained initializer; download or distribute separately.
 yolo26x.pt
+
+# Docker delivery assets generated from the locked experiment.
+models/*.pt
